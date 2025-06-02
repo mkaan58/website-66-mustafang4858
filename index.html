@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Mustafa Kaan Yeşilgül - Freelance Software Developer</title>
+    <meta name="description" content="Mustafa Kaan Yeşilgül's one-page portfolio showcasing technical skills, projects, and professional brand.">
+    <meta name="keywords" content="Mustafa Kaan Yeşilgül, freelance, software developer, web development, UI/UX, full-stack, JavaScript, React, Node.js, portfolio, Istanbul">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Check if emailjs is defined before initializing
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init("PFATyVVqB6dfozezc");
+        }
+    </script>
+    
+    <!-- Custom Styles (WCAG AAA Compliant) -->
+    <style>
+        :root {
+            /* Primary Color System */
+            --color-primary: #c2abec;
+            --color-secondary: #e1abec;
+            --color-accent: #d4ecab;
+            
+            /* Background System */
+            --color-bg: #0f172a;
+            --color-card-bg: #1e293b;
+            
+            /* Text System */
+            --color-text-primary: #f8fafc;
+            --color-text-secondary: #b0c6dd;
+            --color-text-muted: #6993be;
+            
+            /* Border System */
+            --color-border: #475569;
+            --color-border-hover: #64748b;
+            
+            /* Interactive States */
+            --color-primary-hover: #e0d4f5;
+            --color-secondary-hover: #efd4f5;
+            
+            /* Status Colors */
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-error: #ef4444;
+            --color-info: #3b82f6;
+            
+            /* Design System */
+            --border-radius: 15px;
+            --font-heading: 'DM Serif Display', serif;
+            --font-body: 'Raleway', sans-serif;
+
+            /* Navbar scroll state colors */
+            --navbar-initial-bg: rgba(15, 23, 42, 0.8); /* var(--color-bg) with opacity */
+            --navbar-scrolled-bg: rgba(15, 23, 42, 1); /* var(--color-bg) fully opaque */
+        }
+
+        /* 🎯 GUARANTEED VISIBILITY BASE STYLES */
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease; /* Ensure global transition for smooth effects */
+        }
+
+        body {
+            background-color: var(--color-bg) !important;
+            color: var(--color-text-primary) !important;
+            font-family: var(--font-body) !important;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            scroll-behavior: smooth; /* For smooth scrolling links */
+            scroll-padding-top: 80px; /* Adjust for fixed navbar height */
+        }
+
+        /* 🔴 CRITICAL: BUTTON SYSTEM (ZERO TOLERANCE FOR INVISIBLE BUTTONS) */
+        .btn-primary {
+            background-color: var(--color-primary) !important;
+            color: var(--color-bg) !important; /* Text color should contrast well with primary background */
+            border: 2px solid var(--color-primary) !important;
+            font-weight: 600 !important;
+            padding: 12px 24px !important;
+            border-radius: var(--border-radius) !important;
+            transition: all 0.2s ease !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            cursor: pointer !important;
+            font-size: 16px !important;
+            min-height: 44px !important; /* WCAG touch target */
+            min-width: 44px !important; /* WCAG touch target */
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-hover) !important;
+            border-color: var(--color-primary-hover) !important;
+            color: var(--color-bg) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+        }
+
+        .btn-secondary {
+            background-color: transparent !important;
+            color: var(--color-primary) !important;
+            border: 2px solid var(--color-primary) !important;
+            font-weight: 600 !important;
+            padding: 12px 24px !important;
+            border-radius: var(--border-radius) !important;
+            transition: all 0.2s ease !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            cursor: pointer !important;
+            font-size: 16px !important;
+            min-height: 44px !important; /* WCAG touch target */
+            min-width: 44px !important; /* WCAG touch target */
+            text-align: center;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-primary) !important;
+            color: var(--color-bg) !important;
+            border-color: var(--color-primary) !important;
+        }
+
+        /* 🔴 CRITICAL: NAVIGATION SYSTEM */
+        .navbar {
+            background-color: var(--navbar-initial-bg);
+            border-bottom: 1px solid var(--color-border) !important;
+            backdrop-filter: blur(10px) !important;
+            padding: 16px 0 !important;
+            position: fixed !important; /* Changed from sticky for fixed behavior with opacity changes */
+            top: 0 !important;
+            width: 100% !important;
+            z-index: 1000 !important;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .navbar-scrolled {
+            background-color: var(--navbar-scrolled-bg) !important;
+        }
+
+        .navbar-brand {
+            color: var(--color-text-primary) !important;
+            font-weight: 700 !important;
+            font-family: var(--font-heading) !important;
+            font-size: 24px !important;
+            text-decoration: none !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--color-text-secondary) !important;
+            font-weight: 500 !important;
+            padding: 8px 16px !important;
+            border-radius: calc(var(--border-radius) / 2) !important;
+            transition: all 0.2s ease !important;
+            text-decoration: none !important;
+            display: block !important;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--color-primary) !important;
+            background-color: var(--color-card-bg) !important;
+        }
+
+        .navbar-toggler {
+            border: none !important; /* Hamburger handles its own borders */
+            color: var(--color-text-primary) !important;
+            background: transparent !important;
+            padding: 8px 12px !important;
+        }
+
+        /* 🔴 CRITICAL: FORM SYSTEM */
+        .form-control {
+            background-color: var(--color-card-bg) !important; /* Form fields inside a card-like background */
+            border: 2px solid var(--color-border) !important;
+            color: var(--color-text-primary) !important;
+            border-radius: var(--border-radius) !important;
+            padding: 12px 16px !important;
+            font-size: 16px !important;
+            width: 100% !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .form-control:focus {
+            border-color: var(--color-primary) !important;
+            box-shadow: 0 0 0 3px rgba(194, 171, 236, 0.2) !important; /* Use primary color with opacity */
+            outline: none !important;
+        }
+
+        .form-control::placeholder {
+            color: var(--color-text-muted) !important;
+            opacity: 1 !important;
+        }
+
+        .form-label {
+            color: var(--color-text-primary) !important;
+            font-weight: 600 !important;
+            margin-bottom: 8px !important;
+            display: block !important;
+        }
+
+        /* 🔴 CRITICAL: CARD SYSTEM */
+        .card {
+            background-color: var(--color-card-bg) !important;
+            border: 1px solid var(--color-border) !important;
+            color: var(--color-text-primary) !important;
+            border-radius: var(--border-radius) !important;
+            transition: all 0.3s ease !important;
+            overflow: hidden !important;
+        }
+
+        .card:hover {
+            border-color: var(--color-border-hover) !important;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important;
+            transform: translateY(-4px) !important;
+        }
+
+        .card-title {
+            color: var(--color-text-primary) !important;
+            font-family: var(--font-heading) !important;
+            font-weight: 700 !important;
+            margin-bottom: 12px !important;
+        }
+
+        .card-text {
+            color: var(--color-text-secondary) !important;
+            line-height: 1.6 !important;
+        }
+
+        /* 🔴 CRITICAL: ICON SYSTEM */
+        .icon-color {
+            color: var(--color-primary) !important;
+            transition: color 0.2s ease !important;
+        }
+
+        .icon-color:hover {
+            color: var(--color-primary-hover) !important;
+        }
+
+        /* 🔴 CRITICAL: LINK SYSTEM */
+        a {
+            color: var(--color-primary) !important;
+            text-decoration: none !important; /* Plan specifies no underlines initially */
+            transition: all 0.2s ease !important;
+        }
+
+        a:hover {
+            color: var(--color-primary-hover) !important;
+            text-decoration: underline !important;
+            text-underline-offset: 2px !important;
+        }
+
+        /* 🔴 CRITICAL: HEADING HIERARCHY */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--color-text-primary) !important;
+            font-family: var(--font-heading) !important;
+            font-weight: 700 !important;
+            line-height: 1.2 !important;
+            margin-bottom: 16px !important;
+        }
+
+        h1 { font-size: 64px !important; }
+        h2 { font-size: 48px !important; }
+        h3 { font-size: 32px !important; }
+        h4 { font-size: 24px !important; }
+        h5 { font-size: 1.25rem !important; }
+        h6 { font-size: 1rem !important; }
+
+        /* 🔴 CRITICAL: RESPONSIVE TEXT SCALING */
+        @media (max-width: 1023px) { /* Tablet breakpoint */
+            h1 { font-size: 48px !important; }
+            h2 { font-size: 36px !important; }
+            h3 { font-size: 28px !important; }
+            h4 { font-size: 20px !important; }
+        }
+        @media (max-width: 767px) { /* Mobile breakpoint */
+            h1 { font-size: 36px !important; }
+            h2 { font-size: 30px !important; }
+            h3 { font-size: 24px !important; }
+            h4 { font-size: 18px !important; }
+            body { font-size: 16px !important; } /* Base body text size for mobile */
+        }
+        
+        /* Base body text size for desktop */
+        body { font-size: 18px !important; }
+
+        /* 🔴 CRITICAL: UTILITY CLASSES */
+        .text-primary-color { color: var(--color-primary) !important; }
+        .text-secondary-color { color: var(--color-secondary) !important; }
+        .text-accent-color { color: var(--color-accent) !important; }
+        .text-text-primary { color: var(--color-text-primary) !important; }
+        .text-text-secondary { color: var(--color-text-secondary) !important; }
+        .text-text-muted { color: var(--color-text-muted) !important; }
+        .bg-color-bg { background-color: var(--color-bg) !important; }
+        .bg-color-card-bg { background-color: var(--color-card-bg) !important; }
+        .border-color-border { border-color: var(--color-border) !important; }
+
+        /* 🔴 CRITICAL: FOCUS STATES FOR ACCESSIBILITY */
+        button:focus,
+        input:focus,
+        textarea:focus,
+        select:focus,
+        a:focus {
+            outline: 2px solid var(--color-primary) !important;
+            outline-offset: 2px !important;
+            border-color: var(--color-primary) !important; /* Consistency */
+        }
+
+        /* 🔴 CRITICAL: HOVER STATES FOR INTERACTIVE ELEMENTS */
+        button,
+        .btn-primary,
+        .btn-secondary,
+        [role="button"] {
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        /* 🔴 CRITICAL: MOBILE NAVIGATION FIX */
+        .mobile-menu {
+            position: fixed !important;
+            top: 64px !important; /* Height of the navbar */
+            right: 0 !important;
+            height: calc(100vh - 64px) !important;
+            width: 280px !important;
+            background-color: var(--color-bg) !important;
+            border-left: 1px solid var(--color-border) !important;
+            transform: translateX(100%) !important;
+            transition: transform 0.3s ease !important;
+            z-index: 999 !important;
+            overflow-y: auto !important;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0) !important;
+        }
+
+        .hamburger {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-around !important;
+            width: 24px !important;
+            height: 24px !important;
+            background: transparent !important;
+            border: none !important;
+            cursor: pointer !important;
+            padding: 0 !important;
+        }
+
+        .hamburger span {
+            display: block !important;
+            width: 100% !important;
+            height: 2px !important;
+            background-color: var(--color-text-primary) !important;
+            transition: all 0.3s ease !important;
+            transform-origin: center !important;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px) !important;
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0 !important;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px) !important;
+        }
+
+        /* 🔴 CRITICAL: MOBILE TOUCH TARGETS */
+        @media (max-width: 768px) {
+            .btn-primary,
+            .btn-secondary {
+                min-height: 48px !important;
+                min-width: unset !important; /* Allow width to adjust */
+                padding: 16px 24px !important;
+                font-size: 16px !important;
+            }
+            
+            .nav-link {
+                padding: 16px 20px !important;
+                font-size: 16px !important;
+                display: block !important;
+                border-bottom: 1px solid var(--color-border) !important;
+            }
+            
+            .card {
+                margin-bottom: 20px !important;
+            }
+        }
+
+        /* 🔴 CRITICAL: MOBILE FORM FIXES */
+        @media (max-width: 768px) {
+            .form-control {
+                font-size: 16px !important;
+                padding: 16px !important;
+                min-height: 48px !important;
+            }
+            
+            textarea.form-control {
+                min-height: 120px !important;
+            }
+        }
+
+        /* Swiper Styling */
+        .swiper {
+            padding: 20px 0 60px 0 !important;
+            overflow: visible !important; /* Allow slides to show shadows outside container */
+        }
+
+        .swiper-pagination {
+            bottom: 10px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+        }
+
+        .swiper-pagination-bullet {
+            background-color: var(--color-text-muted) !important;
+            opacity: 0.5 !important;
+            width: 10px !important;
+            height: 10px !important;
+            margin: 0 4px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: var(--color-primary) !important;
+            opacity: 1 !important;
+            transform: scale(1.3) !important;
+        }
+
+        /* Swiper Navigation Buttons */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--color-primary) !important;
+            background-color: var(--color-card-bg) !important;
+            width: 44px !important;
+            height: 44px !important;
+            border-radius: 50% !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+            transition: all 0.3s ease !important;
+            border: 2px solid var(--color-border) !important;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background-color: var(--color-primary) !important;
+            color: var(--color-bg) !important;
+            transform: scale(1.1) !important;
+            border-color: var(--color-primary) !important;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 14px !important;
+            font-weight: bold !important;
+        }
+
+        /* Hide navigation buttons on mobile */
+        @media (max-width: 767px) {
+            .swiper-button-next,
+            .swiper-button-prev {
+                display: none !important;
+            }
+            
+            .swiper-pagination {
+                bottom: 20px !important;
+            }
+        }
+
+        /* Typed.js Styling */
+        .typed-element {
+            color: var(--color-primary) !important;
+            font-weight: 700 !important;
+            position: relative !important;
+        }
+
+        .typed-cursor {
+            color: var(--color-primary) !important;
+            font-weight: 300 !important;
+            animation: blink 1s infinite !important;
+            font-size: 1em; /* Ensure cursor scales with parent font size */
+            margin-left: 5px; /* Spacing for cursor */
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Particles.js Styling */
+        .particles-container {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: -1 !important;
+            pointer-events: none !important;
+            overflow: hidden; /* Hide particles outside container */
+        }
+
+        #particles-js {
+            position: absolute !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: transparent !important;
+        }
+
+        /* CRITICAL: Mobile optimization - disable particles */
+        @media (max-width: 768px), (prefers-reduced-motion: reduce) {
+            .particles-container {
+                display: none !important;
+            }
+        }
+        
+        /* About section background image */
+        .about-bg-image {
+            background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwZGVzaWduZXIlMjBwcm9mZXNzaW9uYWx8ZW58MHwwfHx8MTc0ODg5NjgwMXww&ixlib=rb-4.1.0&q=80&w=1080&w=800&h=600&fit=crop&crop=center');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05; /* Very subtle */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-color-bg text-text-primary font-body" x-data="{ 
+    mobileMenuOpen: false, 
+    darkMode: localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches),
+    showBackToTop: false,
+    activeSection: 'home',
+    initNavbarScroll: function() {
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Scroll threshold
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    }
+}" x-init="
+    initNavbarScroll();
+    if (darkMode) document.documentElement.classList.add('dark');
+    $watch('darkMode', value => {
+        if (value) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('darkMode', 'true');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('darkMode', 'false');
+        }
+    });
+    
+    window.addEventListener('scroll', () => {
+        showBackToTop = window.scrollY > 300;
+        
+        // Active section logic
+        const sections = document.querySelectorAll('section[id]');
+        let currentActiveSection = 'home';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100; // Offset for fixed header
+            const sectionBottom = sectionTop + section.clientHeight;
+            if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                currentActiveSection = section.getAttribute('id');
+            }
+        });
+        activeSection = currentActiveSection;
+    });
+">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="navbar-brand">
+                        Mustafa Kaan Yeşilgül
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8 navbar-nav">
+                        <a href="#home" class="nav-link" :class="{ 'active': activeSection === 'home' }">Home</a>
+                        <a href="#about" class="nav-link" :class="{ 'active': activeSection === 'about' }">About</a>
+                        <a href="#skills" class="nav-link" :class="{ 'active': activeSection === 'skills' }">Skills</a>
+                        <a href="#projects" class="nav-link" :class="{ 'active': activeSection === 'projects' }">Projects</a>
+                        <a href="#contact" class="nav-link" :class="{ 'active': activeSection === 'contact' }">Contact</a>
+                        
+                        <!-- Theme Toggle -->
+                        <button @click="darkMode = !darkMode" class="p-2 rounded-lg bg-color-card-bg hover:bg-color-border transition-colors" aria-label="Toggle dark mode">
+                            <i class="fas fa-sun text-accent-color" x-show="darkMode"></i>
+                            <i class="fas fa-moon text-primary-color" x-show="!darkMode"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <!-- Mobile Theme Toggle -->
+                    <button @click="darkMode = !darkMode" class="p-2 rounded-lg bg-color-card-bg" aria-label="Toggle dark mode">
+                        <i class="fas fa-sun text-accent-color" x-show="darkMode"></i>
+                        <i class="fas fa-moon text-primary-color" x-show="!darkMode"></i>
+                    </button>
+                    
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="hamburger p-2" :class="{ 'active': mobileMenuOpen }" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu md:hidden" :class="{ 'active': mobileMenuOpen }">
+            <div class="px-4 py-2 space-y-1 navbar-nav">
+                <a href="#home" @click="mobileMenuOpen = false" class="nav-link" :class="{ 'active': activeSection === 'home' }">Home</a>
+                <a href="#about" @click="mobileMenuOpen = false" class="nav-link" :class="{ 'active': activeSection === 'about' }">About</a>
+                <a href="#skills" @click="mobileMenuOpen = false" class="nav-link" :class="{ 'active': activeSection === 'skills' }">Skills</a>
+                <a href="#projects" @click="mobileMenuOpen = false" class="nav-link" :class="{ 'active': activeSection === 'projects' }">Projects</a>
+                <a href="#contact" @click="mobileMenuOpen = false" class="nav-link" :class="{ 'active': activeSection === 'contact' }">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden text-center py-24">
+        <div id="particles-js" class="particles-container"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-text-primary mb-6">
+                    Mustafa Kaan Yeşilgül
+                </h1>
+                <p class="h2 text-text-secondary mb-4">
+                    Freelance Software Developer | <span id="typed-text" class="typed-element"></span>
+                </p>
+                <p class="text-text-secondary mb-8 max-w-3xl mx-auto text-xl md:text-2xl">
+                    Bringing innovative ideas to life through robust and scalable software solutions. Specializing in full-stack web development with a focus on modern JavaScript frameworks and user-centric design.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="btn-primary" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-project-diagram mr-2"></i>
+                        View My Projects
+                    </a>
+                    <a href="#contact" class="btn-secondary" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-20 bg-color-card-bg overflow-hidden">
+        <div class="about-bg-image"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-text-primary mb-4">About Me</h2>
+                <p class="text-text-secondary max-w-3xl mx-auto text-xl md:text-2xl">
+                    Passionate about creating digital experiences that make a difference.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-1 gap-12 items-center max-w-4xl mx-auto">
+                <div data-aos="fade-up">
+                    <h3 class="text-text-primary mb-6 text-center">Bringing Innovative Ideas to Life</h3>
+                    <p class="text-text-secondary mb-6 leading-relaxed text-center">
+                        Mustafa Kaan Yeşilgül is a freelance software developer with a strong foundation in modern web technologies. He thrives on solving complex problems and transforming creative concepts into functional, user-friendly applications. With a keen eye for detail and a commitment to clean code, Mustafa delivers solutions that are both aesthetically pleasing and technically robust. His approach is deeply rooted in understanding client needs and crafting digital experiences that exceed expectations, driving real value for businesses and users alike.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-md mx-auto">
+                        <div class="text-center p-4 card bg-color-card-bg">
+                            <div class="h3 font-bold text-primary-color">5+</div>
+                            <div class="text-text-secondary text-sm">Years Experience</div>
+                        </div>
+                        <div class="text-center p-4 card bg-color-card-bg">
+                            <div class="h3 font-bold text-primary-color">Robust & Scalable</div>
+                            <div class="text-text-secondary text-sm">Solutions Delivered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-color-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-text-primary mb-4">My Skills</h2>
+                <p class="text-text-secondary max-w-3xl mx-auto text-xl md:text-2xl">
+                    A curated list of technologies and methodologies I leverage to build exceptional software.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="card p-6 flex flex-col items-center text-center hover-lift" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fab fa-js-square text-5xl icon-color mb-4"></i>
+                    <h3 class="card-title text-xl mb-2">JavaScript</h3>
+                    <p class="card-text text-sm">Modern ES6+, TypeScript</p>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="card p-6 flex flex-col items-center text-center hover-lift" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fab fa-react text-5xl icon-color mb-4"></i>
+                    <h3 class="card-title text-xl mb-2">React.js</h3>
+                    <p class="card-text text-sm">Frontend Development</p>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="card p-6 flex flex-col items-center text-center hover-lift" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fab fa-node-js text-5xl icon-color mb-4"></i>
+                    <h3 class="card-title text-xl mb-2">Node.js</h3>
+                    <p class="card-text text-sm">Backend Development</p>
+                </div>
+                <!-- Skill Card 4 -->
+                <div class="card p-6 flex flex-col items-center text-center hover-lift" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fab fa-python text-5xl icon-color mb-4"></i>
+                    <h3 class="card-title text-xl mb-2">Python</h3>
+                    <p class="card-text text-sm">Scripting & Data</p>
+                </div>
+                <!-- Skill Card 5 -->
+                <div class="card p-6 flex flex-col items-center text-center hover-lift" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fab fa-aws text-5xl icon-color mb-4"></i>
+                    <h3 class="card-title text-xl mb-2">AWS</h3>
+                    <p class="card-text text-sm">Cloud Services</p>
+                </div>
+                <!-- Skill Card 6 -->
+                <div class="card p-6 flex flex-col items-center text-center hover-lift" data-aos="zoom-in" data-aos-delay="600">
+                    <i class="fas fa-database text-5xl icon-color mb-4"></i>
+                    <h3 class="card-title text-xl mb-2">SQL/NoSQL</h3>
+                    <p class="card-text text-sm">Database Management</p>
+                </div>
+                <!-- Skill Card 7 -->
+                <div class="card p-6 flex flex-col items-center text-center hover-lift" data-aos="zoom-in" data-aos-delay="700">
+                    <i class="fas fa-code-branch text-5xl icon-color mb-4"></i>
+                    <h3 class="card-title text-xl mb-2">Git</h3>
+                    <p class="card-text text-sm">Version Control</p>
+                </div>
+                <!-- Skill Card 8 -->
+                <div class="card p-6 flex flex-col items-center text-center hover-lift" data-aos="zoom-in" data-aos-delay="800">
+                    <i class="fas fa-palette text-5xl icon-color mb-4"></i>
+                    <h3 class="card-title text-xl mb-2">UI/UX</h3>
+                    <p class="card-text text-sm">Principles & Design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-color-card-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-text-primary mb-4">Featured Projects</h2>
+                <p class="text-text-secondary max-w-3xl mx-auto text-xl md:text-2xl">
+                    A showcase of my selected work demonstrating expertise and innovative solutions.
+                </p>
+            </div>
+            
+            <!-- Portfolio Swiper -->
+            <div class="swiper portfolio-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Project Item 1 -->
+                    <div class="swiper-slide">
+                        <div class="group relative overflow-hidden card hover-lift" data-aos="zoom-in" data-aos-delay="100">
+                            <img src="https://images.unsplash.com/photo-1635423759716-53ccaa71b3fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHxmYXNoaW9uJTIwZGVzaWduJTIwY29sbGVjdGlvbnxlbnwwfDB8fHwxNzQ4ODk2ODAzfDA&ixlib=rb-4.1.0&q=80&w=1080&w=800&h=600&fit=crop&crop=center" 
+                                alt="Screenshot of a fashion design collection showcase web application" 
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                                loading="lazy">
+                            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                                <div class="text-center">
+                                    <h3 class="card-title text-xl text-text-primary mb-2">Dynamic E-commerce Platform</h3>
+                                    <p class="card-text text-text-secondary text-sm mb-4">Modern online shopping experience with advanced features and intuitive navigation.</p>
+                                    <div class="flex flex-col gap-2">
+                                        <button class="btn-primary text-sm flex items-center justify-center">
+                                            <i class="fas fa-eye mr-2"></i> View Project
+                                        </button>
+                                        <button class="btn-secondary text-sm flex items-center justify-center">
+                                            <i class="fab fa-github mr-2"></i> GitHub Repo
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Item 2 -->
+                    <div class="swiper-slide">
+                        <div class="group relative overflow-hidden card hover-lift" data-aos="zoom-in" data-aos-delay="200">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHxjbG90aGluZyUyMHN0eWxlJTIwbW9kZXJufGVufDB8MHx8fDE3NDg4OTY4MDN8MA&ixlib=rb-4.1.0&q=80&w=1080&w=800&h=600&fit=crop&crop=center" 
+                                alt="Screenshot of a clothing style mobile app dashboard" 
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                                loading="lazy">
+                            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                                <div class="text-center">
+                                    <h3 class="card-title text-xl text-text-primary mb-2">Interactive Dashboard Design</h3>
+                                    <p class="card-text text-text-secondary text-sm mb-4">Clean and intuitive admin dashboard with real-time data visualization and user management.</p>
+                                    <div class="flex flex-col gap-2">
+                                        <button class="btn-primary text-sm flex items-center justify-center">
+                                            <i class="fas fa-eye mr-2"></i> View Project
+                                        </button>
+                                        <button class="btn-secondary text-sm flex items-center justify-center">
+                                            <i class="fab fa-github mr-2"></i> GitHub Repo
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Item 3 -->
+                    <div class="swiper-slide">
+                        <div class="group relative overflow-hidden card hover-lift" data-aos="zoom-in" data-aos-delay="300">
+                            <img src="https://images.unsplash.com/photo-1599566276129-97d70dfdda11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHxmYXNoaW9uJTIwcGhvdG9ncmFwaHklMjBtb2RlbHxlbnwwfDB8fHwxNzQ4ODk2ODAzfDA&ixlib=rb-4.1.0&q=80&w=1080&w=800&h=600&fit=crop&crop=center" 
+                                alt="Screenshot of a professional fashion photography portfolio website" 
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                                loading="lazy">
+                            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                                <div class="text-center">
+                                    <h3 class="card-title text-xl text-text-primary mb-2">Modern Portfolio Website</h3>
+                                    <p class="card-text text-text-secondary text-sm mb-4">A sleek, responsive personal portfolio designed to showcase skills and projects effectively.</p>
+                                    <div class="flex flex-col gap-2">
+                                        <button class="btn-primary text-sm flex items-center justify-center">
+                                            <i class="fas fa-eye mr-2"></i> View Project
+                                        </button>
+                                        <button class="btn-secondary text-sm flex items-center justify-center">
+                                            <i class="fab fa-github mr-2"></i> GitHub Repo
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Item 4 (Reused image) -->
+                    <div class="swiper-slide">
+                        <div class="group relative overflow-hidden card hover-lift" data-aos="zoom-in" data-aos-delay="100">
+                            <img src="https://images.unsplash.com/photo-1635423759716-53ccaa71b3fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHxmYXNoaW9uJTIwZGVzaWduJTIwY29sbGVjdGlvbnxlbnwwfDB8fHwxNzQ4ODk2ODAzfDA&ixlib=rb-4.1.0&q=80&w=1080&w=800&h=600&fit=crop&crop=center" 
+                                alt="Screenshot of a real-time chat application" 
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                                loading="lazy">
+                            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                                <div class="text-center">
+                                    <h3 class="card-title text-xl text-text-primary mb-2">Real-time Chat Application</h3>
+                                    <p class="card-text text-text-secondary text-sm mb-4">Built with WebSockets for instant messaging, featuring user authentication and group chats.</p>
+                                    <div class="flex flex-col gap-2">
+                                        <button class="btn-primary text-sm flex items-center justify-center">
+                                            <i class="fas fa-eye mr-2"></i> View Project
+                                        </button>
+                                        <button class="btn-secondary text-sm flex items-center justify-center">
+                                            <i class="fab fa-github mr-2"></i> GitHub Repo
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Item 5 (Reused image) -->
+                    <div class="swiper-slide">
+                        <div class="group relative overflow-hidden card hover-lift" data-aos="zoom-in" data-aos-delay="200">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHxjbG90aGluZyUyMHN0eWxlJTIwbW9kZXJufGVufDB8MHx8fDE3NDg4OTY4MDN8MA&ixlib=rb-4.1.0&q=80&w=1080&w=800&h=600&fit=crop&crop=center" 
+                                alt="Screenshot of a cross-platform mobile application" 
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                                loading="lazy">
+                            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                                <div class="text-center">
+                                    <h3 class="card-title text-xl text-text-primary mb-2">Cross-platform Mobile App</h3>
+                                    <p class="card-text text-text-secondary text-sm mb-4">Developed a native-like experience for iOS and Android with a focus on performance.</p>
+                                    <div class="flex flex-col gap-2">
+                                        <button class="btn-primary text-sm flex items-center justify-center">
+                                            <i class="fas fa-eye mr-2"></i> View Project
+                                        </button>
+                                        <button class="btn-secondary text-sm flex items-center justify-center">
+                                            <i class="fab fa-github mr-2"></i> GitHub Repo
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Item 6 (Reused image) -->
+                    <div class="swiper-slide">
+                        <div class="group relative overflow-hidden card hover-lift" data-aos="zoom-in" data-aos-delay="300">
+                            <img src="https://images.unsplash.com/photo-1599566276129-97d70dfdda11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHxmYXNoaW9uJTIwcGhvdG9ncmFwaHklMjBtb2RlbHxlbnwwfDB8fHwxNzQ4ODk2ODA0fDA&ixlib=rb-4.1.0&q=80&w=1080&w=800&h=600&fit=crop&crop=center" 
+                                alt="Screenshot of a data visualization dashboard" 
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                                loading="lazy">
+                            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                                <div class="text-center">
+                                    <h3 class="card-title text-xl text-text-primary mb-2">Data Analytics Platform</h3>
+                                    <p class="card-text text-text-secondary text-sm mb-4">Robust platform for large-scale data processing and interactive analytics visualization.</p>
+                                    <div class="flex flex-col gap-2">
+                                        <button class="btn-primary text-sm flex items-center justify-center">
+                                            <i class="fas fa-eye mr-2"></i> View Project
+                                        </button>
+                                        <button class="btn-secondary text-sm flex items-center justify-center">
+                                            <i class="fab fa-github mr-2"></i> GitHub Repo
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section - EmailJS Playground yapısına uygun -->
+<section id="contact" class="py-20 bg-color-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-text-primary mb-4">Get In Touch</h2>
+            <p class="text-text-secondary max-w-3xl mx-auto text-xl md:text-2xl">
+                Let's discuss your next project and bring your ideas to life.
+            </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Contact Info -->
+            <div data-aos="fade-right">
+                <h3 class="text-text-primary mb-8">Let's Connect</h3>
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-color-card-bg rounded-lg flex items-center justify-center mr-4 shadow">
+                            <i class="fas fa-envelope text-primary-color text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-text-primary">Email</h4>
+                            <a href="mailto:contact@mustafakaanyesilgul.com" class="text-text-secondary">contact@mustafakaanyesilgul.com</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Social Media -->
+                <div class="mt-8">
+                    <h4 class="text-text-primary mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com/in/mustafakaanyesilgul" target="_blank" rel="noopener noreferrer" 
+                           class="w-10 h-10 bg-color-card-bg rounded-lg flex items-center justify-center hover:bg-primary-color hover:text-color-bg text-text-secondary transition-all icon-color" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://github.com/mustafakaanyesilgul" target="_blank" rel="noopener noreferrer" 
+                           class="w-10 h-10 bg-color-card-bg rounded-lg flex items-center justify-center hover:bg-primary-color hover:text-color-bg text-text-secondary transition-all icon-color" aria-label="GitHub Profile">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form - EmailJS Playground Compatible -->
+            <div data-aos="fade-left">
+                <div class="bg-color-card-bg p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-text-primary mb-6">Send Message</h3>
+                    
+                    <!-- EXACT EmailJS Form Structure -->
+                    <form id="emailjs-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="field">
+                                <label for="name" class="form-label">
+                                    <i class="fas fa-user mr-2 icon-color"></i>Name
+                                </label>
+                                <input 
+                                    type="text" 
+                                    name="name" 
+                                    id="name"
+                                    required
+                                    class="form-control"
+                                    placeholder="Your Name">
+                            </div>
+                            <div class="field">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope mr-2 icon-color"></i>Email
+                                </label>
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    id="email"
+                                    required
+                                    class="form-control"
+                                    placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="subject" class="form-label">
+                                <i class="fas fa-tag mr-2 icon-color"></i>Subject
+                            </label>
+                            <input 
+                                type="text" 
+                                name="subject" 
+                                id="subject"
+                                required
+                                class="form-control"
+                                placeholder="Project Inquiry">
+                        </div>
+                        <div class="field">
+                            <label for="message" class="form-label">
+                                <i class="fas fa-comment mr-2 icon-color"></i>Message
+                            </label>
+                            <textarea 
+                                name="message" 
+                                id="message"
+                                required
+                                rows="5"
+                                class="form-control resize-none"
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        
+                        <!-- Hidden field for recipient email - EmailJS playground style -->
+                        <div class="field hidden">
+                            <input type="hidden" name="to_email" id="to_email" value="mustafang4858@gmail.com">
+                        </div>
+                        
+                        <button 
+                            type="submit" 
+                            id="contact-btn"
+                            class="btn-primary w-full">
+                            <span>
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </span>
+                        </button>
+                        
+                        <!-- Success/Error Messages -->
+                        <div id="success-message" class="hidden text-color-success text-center py-3 bg-color-success/10 rounded-lg">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Message sent successfully! I'll get back to you soon.
+                        </div>
+                        <div id="error-message" class="hidden text-color-error text-center py-3 bg-color-error/10 rounded-lg">
+                            <i class="fas fa-exclamation-circle mr-2"></i>
+                            <span id="error-text">Failed to send message. Please try again.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-color-bg text-text-primary py-12 border-t border-color-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Logo & Description -->
+                <div class="md:col-span-2">
+                    <div class="navbar-brand mb-4">Mustafa Kaan Yeşilgül</div>
+                    <p class="text-text-secondary mb-6 max-w-md">
+                        Crafting robust and scalable software solutions with a focus on innovative digital experiences.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com/in/mustafakaanyesilgul" target="_blank" rel="noopener noreferrer" class="text-text-secondary hover:text-primary-color transition-colors icon-color" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://github.com/mustafakaanyesilgul" target="_blank" rel="noopener noreferrer" class="text-text-secondary hover:text-primary-color transition-colors icon-color" aria-label="GitHub Profile">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-text-primary h4 font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-text-secondary hover:text-primary-color transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-text-secondary hover:text-primary-color transition-colors">About</a></li>
+                        <li><a href="#skills" class="text-text-secondary hover:text-primary-color transition-colors">Skills</a></li>
+                        <li><a href="#projects" class="text-text-secondary hover:text-primary-color transition-colors">Projects</a></li>
+                        <li><a href="#contact" class="text-text-secondary hover:text-primary-color transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services (adjusted to match plan) -->
+                <div>
+                    <h3 class="text-text-primary h4 font-semibold mb-4">Expertise</h3>
+                    <ul class="space-y-2">
+                        <li class="text-text-secondary">Full-Stack Web Development</li>
+                        <li class="text-text-secondary">UI/UX Design & Prototyping</li>
+                        <li class="text-text-secondary">API Development & Integration</li>
+                        <li class="text-text-secondary">Cloud Deployment (AWS)</li>
+                        <li class="text-text-secondary">Performance Optimization</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-color-border mt-12 pt-8 text-center text-text-muted text-sm">
+                <p>&copy; <span x-text="new Date().getFullYear()"></span> Mustafa Kaan Yeşilgül. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button 
+        x-show="showBackToTop" 
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform scale-90"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-90"
+        class="fixed bottom-8 right-8 btn-primary p-3 rounded-full shadow-lg z-40" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript CDNs (EXACT ORDER) -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+    
+    <!-- Conditional Particles.js loading -->
+    <script>
+        if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js';
+            script.onload = () => {
+                if (typeof particlesJS !== 'undefined') {
+                    particlesJS('particles-js', {
+                        particles: {
+                            number: {
+                                value: 50,
+                                density: {
+                                    enable: true,
+                                    value_area: 800
+                                }
+                            },
+                            color: {
+                                value: 'var(--color-primary)' // Use CSS variable
+                            },
+                            shape: {
+                                type: 'circle',
+                                stroke: {
+                                    width: 0,
+                                    color: 'var(--color-primary)' // Use CSS variable
+                                }
+                            },
+                            opacity: {
+                                value: 0.3,
+                                random: true,
+                                anim: {
+                                    enable: true,
+                                    speed: 1,
+                                    opacity_min: 0.1,
+                                    sync: false
+                                }
+                            },
+                            size: {
+                                value: 3,
+                                random: true,
+                                anim: {
+                                    enable: true,
+                                    speed: 2,
+                                    size_min: 0.1,
+                                    sync: false
+                                }
+                            },
+                            line_linked: {
+                                enable: true,
+                                distance: 150,
+                                color: 'var(--color-primary)', // Use CSS variable
+                                opacity: 0.2,
+                                width: 1
+                            },
+                            move: {
+                                enable: true,
+                                speed: 1,
+                                direction: 'none',
+                                random: false,
+                                straight: false,
+                                out_mode: 'out',
+                                bounce: false
+                            }
+                        },
+                        interactivity: {
+                            detect_on: 'canvas',
+                            events: {
+                                onhover: {
+                                    enable: true,
+                                    mode: 'repulse'
+                                },
+                                onclick: {
+                                    enable: true,
+                                    mode: 'push'
+                                },
+                                resize: true
+                            },
+                            modes: {
+                                grab: {
+                                    distance: 140,
+                                    line_linked: {
+                                        opacity: 1
+                                    }
+                                },
+                                bubble: {
+                                    distance: 400,
+                                    size: 40,
+                                    duration: 2,
+                                    opacity: 8,
+                                    speed: 3
+                                },
+                                repulse: {
+                                    distance: 100,
+                                    duration: 0.4
+                                },
+                                push: {
+                                    particles_nb: 4
+                                },
+                                remove: {
+                                    particles_nb: 2
+                                }
+                            }
+                        },
+                        retina_detect: true
+                    });
+                }
+            };
+            document.body.appendChild(script);
+        }
+    </script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 50,
+            disable: function() {
+                // Disable AOS on devices with width less than 768px
+                return window.innerWidth < 768;
+            }
+        });
+
+        // EmailJS Contact Form Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('emailjs-form');
+            const btn = document.getElementById('contact-btn');
+            const successMsg = document.getElementById('success-message');
+            const errorMsg = document.getElementById('error-message');
+            const errorText = document.getElementById('error-text');
+            
+            if (form && btn) {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // Client-side validation
+                    let isValid = true;
+                    form.querySelectorAll('[required]').forEach(input => {
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            input.classList.add('border-color-error'); // Add error styling
+                        } else {
+                            input.classList.remove('border-color-error');
+                        }
+                    });
+
+                    // Email validation
+                    const emailInput = form.querySelector('input[type="email"]');
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (emailInput && !emailRegex.test(emailInput.value.trim())) {
+                        isValid = false;
+                        emailInput.classList.add('border-color-error');
+                    } else if (emailInput) {
+                        emailInput.classList.remove('border-color-error');
+                    }
+
+                    if (!isValid) {
+                        errorText.textContent = 'Please fill in all required fields and ensure email is valid.';
+                        errorMsg.classList.remove('hidden');
+                        // Highlight first invalid field
+                        const firstInvalid = form.querySelector('[required].border-color-error, input[type="email"].border-color-error');
+                        if (firstInvalid) firstInvalid.focus();
+                        setTimeout(() => errorMsg.classList.add('hidden'), 5000);
+                        return;
+                    }
+
+                    // Change button state
+                    btn.disabled = true;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+                    
+                    // Hide previous messages
+                    successMsg.classList.add('hidden');
+                    errorMsg.classList.add('hidden');
+                    
+                    const serviceID = 'service_d1ikm0r';
+                    const templateID = 'template_y6yjh3h';
+                    
+                    emailjs.sendForm(serviceID, templateID, form)
+                        .then(function(response) {
+                            console.log('EmailJS SUCCESS:', response.status, response.text);
+                            successMsg.classList.remove('hidden');
+                            form.reset();
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
+                            setTimeout(() => {
+                                successMsg.classList.add('hidden');
+                            }, 5000);
+                        }, function(error) {
+                            console.log('EmailJS FAILED:', error);
+                            let errorMessage = 'Failed to send message. Please try again.';
+                            if (error.status === 422) {
+                                errorMessage = 'Invalid template or service configuration.';
+                            } else if (error.status === 412) {
+                                errorMessage = 'Email service authentication error.';
+                            } else if (error.status === 400) {
+                                errorMessage = 'Invalid request. Please check your inputs.';
+                            }
+                            errorText.textContent = errorMessage;
+                            errorMsg.classList.remove('hidden');
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
+                            setTimeout(() => errorMsg.classList.add('hidden'), 5000);
+                        });
+                });
+            } else {
+                console.error('EmailJS form elements not found!');
+            }
+        });
+
+        // Smooth scrolling for navigation links (delegated to CSS scroll-behavior: smooth)
+        // Also update active nav link is handled by Alpine.js in body tag x-init
+
+        // Close mobile menu when clicking outside (using Alpine.js logic)
+        document.addEventListener('click', function(event) {
+            const mobileMenuElement = document.querySelector('.mobile-menu');
+            const hamburgerElement = document.querySelector('.hamburger');
+            const navbarElement = document.querySelector('nav');
+            
+            if (mobileMenuElement && hamburgerElement && navbarElement) {
+                // Check if the click is outside both the menu and the hamburger button
+                if (!mobileMenuElement.contains(event.target) && !hamburgerElement.contains(event.target) && !navbarElement.contains(event.target)) {
+                    if (window.Alpine && Alpine.raw(Alpine.data(document.body).mobileMenuOpen)) { // Check if mobileMenuOpen is true
+                        Alpine.data(document.body).mobileMenuOpen = false;
+                    }
+                }
+            }
+        });
+
+        // Prevent zoom on input focus (iOS fix)
+        document.querySelectorAll('input, textarea, select').forEach(element => {
+            element.addEventListener('touchstart', function() {
+                // Ensure the font size is at least 16px to prevent iOS zoom
+                if (window.getComputedStyle(element).fontSize !== '16px') {
+                    element.style.fontSize = '16px';
+                }
+            });
+        });
+
+        // Initialize Swiper
+        document.addEventListener('DOMContentLoaded', function() {
+            const portfolioSwiperElement = document.querySelector('.portfolio-swiper');
+            if (portfolioSwiperElement && typeof Swiper !== 'undefined') {
+                const portfolioSwiper = new Swiper('.portfolio-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        dynamicBullets: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 15,
+                        },
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                    },
+                    effect: 'slide',
+                    speed: 600,
+                    touchRatio: 1,
+                    threshold: 5,
+                    allowTouchMove: true,
+                    preventInteractionOnTransition: false,
+                    watchOverflow: true,
+                    centerInsufficientSlides: true,
+                });
+            }
+        });
+
+        // Initialize Typed.js
+        document.addEventListener('DOMContentLoaded', function() {
+            const typedElement = document.getElementById('typed-text');
+            if (typedElement && typeof Typed !== 'undefined') {
+                new Typed('#typed-text', {
+                    strings: [
+                        'Crafting Digital Experiences', 
+                        'Building Scalable Solutions', 
+                        'Solving Complex Problems',
+                        'Innovating the Web'
+                    ],
+                    typeSpeed: 60,
+                    backSpeed: 30,
+                    backDelay: 2000,
+                    startDelay: 500,
+                    loop: true,
+                    showCursor: true,
+                    cursorChar: '|',
+                    autoInsertCss: true,
+                });
+            }
+        });
+    </script>
+</body>
+</html>
